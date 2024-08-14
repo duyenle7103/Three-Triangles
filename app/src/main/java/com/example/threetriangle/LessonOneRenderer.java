@@ -169,16 +169,16 @@ public class LessonOneRenderer implements GLSurfaceView.Renderer
                         + "void main()                    \n"		// The entry point for our vertex shader.
                         + "{                              \n"
                         + "   v_Color = a_Color;          \n"		// Pass the color through to the fragment shader.
-                        // It will be interpolated across the triangle.
-                        + "   gl_Position = u_MVPMatrix   \n" 	// gl_Position is a special variable used to store the final position.
-                        + "               * a_Position;   \n"     // Multiply the vertex by the matrix to get the final point in
-                        + "}                              \n";    // normalized screen coordinates.
+                                                                    // It will be interpolated across the triangle.
+                        + "   gl_Position = u_MVPMatrix   \n" 	    // gl_Position is a special variable used to store the final position.
+                        + "               * a_Position;   \n"       // Multiply the vertex by the matrix to get the final point in
+                        + "}                              \n";      // normalized screen coordinates.
 
         final String fragmentShader =
-                "precision mediump float;       \n"		// Set the default precision to medium. We don't need as high of a
-                        // precision in the fragment shader.
+                "precision mediump float;       \n"     // Set the default precision to medium. We don't need as high of a
+                                                                    // precision in the fragment shader.
                         + "varying vec4 v_Color;          \n"		// This is the color from the vertex shader interpolated across the
-                        // triangle per fragment.
+                                                                    // triangle per fragment.
                         + "void main()                    \n"		// The entry point for our fragment shader.
                         + "{                              \n"
                         + "   gl_FragColor = v_Color;     \n"		// Pass the color directly through the pipeline.
